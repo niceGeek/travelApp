@@ -1,0 +1,38 @@
+<form [formGroup]="findRideForm" class="ui fluid form" [hidden]="findRideFormSubmitted">
+  <div class="form-group">
+      <label class="center-block ui blue horizontal label">From:
+         <input class="form-control" type="text" formControlName="departure">
+         <!--<select></select>-->
+        </label>
+  </div>
+  <div class="ui divider"></div>
+  <div class="form-group">
+      <label class="center-block ui blue horizontal label">To:
+          <input class="form-control" type="text" formControlName="destination">
+          <!--<select ng-dropdown [data]="places"></ng-dropdown></select>-->
+        </label>
+  </div>
+  <div class="ui divider"></div>
+  <div class="form-group">
+      <label class="center-block ui blue horizontal label">Date:
+        <input class="form-control" type="date" formControlName="departureDate">
+      </label>
+  </div>
+  <div class="ui divider"></div>
+  <div class="form-group">
+      <label class="center-block ui blue horizontal label">Time:
+        <input class="form-control" type="time" formControlName="departureTime">
+      </label>
+  </div>
+  <div class="ui divider"></div>
+      <div class="ui buttons">
+          <button class="ui button blue" (click)="goBack()">Back</button>
+          <div class="or"></div>
+          <button class="ui positive button" (click)="findRides()" [disabled]="!findRideForm.valid">Find rides</button>
+        </div>
+</form>
+<div [hidden]="!findRideFormSubmitted">
+  <h1>You have successfully submitted the find rides form!</h1>
+  <h2>Have a nice trip from {{from}} to {{to}}</h2>
+</div>
+

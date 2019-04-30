@@ -1,0 +1,49 @@
+
+<!-- Header -->
+<div class="ui inverted vertical footer segment">
+    <div class="ui center aligned container">
+      <div class="ui stackable inverted divided grid">
+        <div class="ui sixteen wide column">
+            TUJYANE
+        </div>
+      </div>
+    </div>
+</div>
+
+  <div class="ui content" style="background-image: url(./assets/images/forestroad.jpg); background-size: 100% 100%">
+      <!-- Body -->
+    <nav [hidden]="submitted">
+  
+        <button class="ui button green" type="submit" (click)="findRideClicked()" routerLink="/find-ride" routerLinkActive="active">
+          find a ride
+        </button>
+
+        <br>
+        <br>
+        
+        <button class="ui button green" (click)="offerRideClicked()" routerLink="/offer-ride" routerLinkActive="active">
+        offer a ride
+        </button>
+        
+        </nav>
+        <router-outlet></router-outlet>
+    </div>
+    
+    <!-- Footer -->
+    <div class="ui inverted vertical footer segment">
+        <div class="ui center aligned container">
+          <div class="ui stackable inverted divided grid">
+            <div class="ui four wide column">
+                    <a href="http://www.google.de" style="color: white">Home</a>
+            </div>
+  
+            <div class="ui eight wide column">
+                <a href="http://www.google.de" style="color: white">Impressum</a>
+            </div>
+            
+            <div class="ui four wide column">
+                    <a href="http://www.google.de" style="color: white">Copyright &copy;</a>
+            </div>
+          </div>
+        </div>
+     </div>

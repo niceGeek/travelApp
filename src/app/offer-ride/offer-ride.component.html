@@ -1,0 +1,47 @@
+<form [formGroup]="offerRideForm" class="ui fluid form" [hidden]="offerRideFormSubmitted">
+    <div class="form-group">
+        <label class="center-block ui blue horizontal label">From:
+            <input class="form-control" type="text" formControlName="departure">
+          </label>
+    </div>
+    <div class="ui divider"></div>
+    <div class="form-group">
+        <label class="center-block ui blue horizontal label">To:
+            <input class="form-control" type="text" formControlName="destination">
+          </label>
+    </div>
+    <div class="ui divider"></div>
+    <div class="form-group">
+        <label class="center-block ui blue horizontal label">Date:
+          <input class="form-control" type="date" formControlName="departureTime">
+        </label>
+    </div>
+    <div class="ui divider"></div>
+    <div class="form-group">
+        <label class="center-block ui blue horizontal label">First name:
+            <input class="form-control" type="text" formControlName="firstname">
+          </label>
+    </div>
+    <div class="ui divider"></div>
+    <div class="form-group">
+        <label class="center-block ui blue horizontal label">Last name:
+            <input class="form-control" type="text" formControlName="lastname">
+          </label>
+    </div>
+    <div class="ui divider"></div>
+    <div class="form-group">
+        <label class="center-block ui blue horizontal label">Phone number:
+            <input class="form-control" type="tel" formControlName="phone">
+          </label>
+    </div>
+        <div class="ui buttons">
+                <button class="ui button blue" (click)="goBack()">Back</button>
+                <div class="or"></div>
+                <button class="ui positive button" (click)="offerRide()" [disabled]="!offerRideForm.valid">Offer ride</button>
+              </div>
+  </form>
+  <div [hidden]="!findRideFormSubmitted">
+    <h1>You have successfully submitted the find rides form!</h1>
+  </div>
+  
+  
