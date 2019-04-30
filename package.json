@@ -21,6 +21,9 @@
     "@angular/platform-browser-dynamic": "^7.2.14",
     "@angular/router": "^7.2.14",
     "core-js": "^2.5.4",
+    "extend": "^3.0.2",
+    "jquery": "^3.4.0",
+    "lodash": "^4.17.11",
     "rxjs": "^6.5.1",
     "semantic-ui-css": "^2.3.2",
     "zone.js": "^0.8.29"
