@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-find-ride',
@@ -20,7 +21,7 @@ export class FindRideComponent {
   // TODO: how about a constant of departures/destinations???
   // private const places = ['Kigali', 'Butare', 'Gitarama', 'Gikongoro', 'Cyangugu', 'Ruhengeri', 'Gisenyi', 'Byumba', '];
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private router: Router) {
     this.createFindRideForm();
   }
 
@@ -35,7 +36,7 @@ export class FindRideComponent {
   }
 
   goBack() {
-    console.log('Implement go back functionality');
+    this.router.navigate(['/']);
   }
 
   createFindRideForm() {
