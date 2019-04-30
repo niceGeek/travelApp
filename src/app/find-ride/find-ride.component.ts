@@ -36,7 +36,7 @@ export class FindRideComponent {
   }
 
   goBack() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/app-root']);
   }
 
   createFindRideForm() {
