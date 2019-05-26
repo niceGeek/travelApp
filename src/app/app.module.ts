@@ -15,10 +15,7 @@ const appRoutes: Routes = [
   { path: 'admin', component: AdminComponent },
   { path: 'find-ride', component: FindRideComponent },
   { path: 'offer-ride', component: OfferRideComponent },
-  { path: '',
-    redirectTo: '/',
-    pathMatch: 'full'
-  }
+  { path: '', redirectTo: '/', pathMatch: 'full'}
 ];
 
 @NgModule({
