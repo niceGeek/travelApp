@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FindRideComponent } from './find-ride.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('FindRideComponent', () => {
   let component: FindRideComponent;
@@ -8,7 +9,9 @@ describe('FindRideComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FindRideComponent ]
+      declarations: [ FindRideComponent,
+      ReactiveFormsModule ],
+      imports: [ReactiveFormsModule],
     })
     .compileComponents();
   }));

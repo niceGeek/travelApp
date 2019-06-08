@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { FindRideComponent } from './find-ride/find-ride.component';
 import { AppRoutingModule } from './app-routing.module';
 import { OfferRideComponent } from './offer-ride/offer-ride.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminComponent } from './admin/admin.component';
 
 // Defining routes constant
@@ -27,6 +27,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(
       appRoutes,
