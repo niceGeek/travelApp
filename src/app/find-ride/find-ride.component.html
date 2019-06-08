@@ -34,5 +34,8 @@
 <div [hidden]="!findRideFormSubmitted">
   <h1>You have successfully submitted the find rides form!</h1>
   <h2>Have a nice trip from {{from}} to {{to}}</h2>
+  <h2>Data</h2>
+  {{result | json}}
+ 
 </div>
 

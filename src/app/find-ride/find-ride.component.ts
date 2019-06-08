@@ -10,29 +10,34 @@ import { Router } from '@angular/router';
   templateUrl: './find-ride.component.html',
   styleUrls: ['./find-ride.component.css']
 })
-export class FindRideComponent {
+export class FindRideComponent implements OnInit{
   private driversURL = 'http://localhost:7001/travel-app-backend-1.0/resources/fahrer';
-  private http: HttpClient;
   private findRideForm: FormGroup;
   private submitted: Boolean = false;
   private findRideFormSubmitted: Boolean = false;
   private from: String;
   private to: String;
+  private drivers: Observable<Object>;
+  private result: any;
   // TODO: how about a constant of departures/destinations???
   // private const places = ['Kigali', 'Butare', 'Gitarama', 'Gikongoro', 'Cyangugu', 'Ruhengeri', 'Gisenyi', 'Byumba', '];
 
-  constructor(private formBuilder: FormBuilder, private router: Router) {
+  constructor(private formBuilder: FormBuilder, private router: Router, private http: HttpClient) {
     this.createFindRideForm();
+  }
+
+  ngOnInit(): void {
+    this.result = this.drivers;
   }
 
   findRides() {
     this.findRideFormSubmitted = true;
     this.from = this.findRideForm.get('departure').value;
     this.to = this.findRideForm.get('destination').value;
-    return this.http.get(this.driversURL).pipe(
-      catchError(this.handleError('findRides', ''))
+    this.drivers = this.http.get(this.driversURL);
+    return this.drivers
+                .pipe(catchError(this.handleError('findRides', ''))
     );
-    // console.log(JSON.stringify(this.http.get(this.driversURL)));
   }
 
   goBack() {
