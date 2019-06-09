@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-find-ride',
@@ -34,10 +35,15 @@ export class FindRideComponent implements OnInit{
     this.findRideFormSubmitted = true;
     this.from = this.findRideForm.get('departure').value;
     this.to = this.findRideForm.get('destination').value;
-    this.drivers = this.http.get(this.driversURL);
-    return this.drivers
-                .pipe(catchError(this.handleError('findRides', ''))
+    this.result = this.http.get(this.driversURL).subscribe(
+      (data) => {
+        return console.log(data);
+      }
     );
+  return this.result;
+    // this.drivers = this.http.get(this.driversURL).subscribe(() =>  console.log(JSON.stringify(this.drivers)));
+      //console.log(JSON.stringify(this.drivers));
+     // return this.drivers.pipe(catchError(this.handleError('findRides', '')));
   }
 
   goBack() {
