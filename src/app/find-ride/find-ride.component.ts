@@ -59,14 +59,6 @@ export class FindRideComponent implements OnInit{
       departureTime: ['', Validators.required ]
     });
   }
-  // This is where I should implement the DB fecht method
-  // HINT: Use an external service for all the DB fetch operations.
-  // This is supposed to be the method for fething data from the DB.
-  /*
-  findRidesFromDB(ride: Ride) {
-
-  }
-  */
 
  /**
  * Handle Http operation that failed.
